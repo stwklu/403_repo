@@ -1,12 +1,12 @@
 #! /usr/bin/python3
 '''
-Metaprogramming
+Problem title:
 
-problem site: https://open.kattis.com/problems/metaprogramming
+problem site: 
 
-Difficulty: 2.8
-CPU Time limit: 4 seconds
-Memory limit: 1024 MB
+Difficulty: 
+CPU Time limit:
+Memory limit:
 '''
 import sys
 
