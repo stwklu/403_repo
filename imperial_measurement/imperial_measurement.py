@@ -63,6 +63,8 @@ def main():
 		content = f.readlines()
 	content = [x.strip() for x in content]
 
+	convert_dict = {}
+
 	unit_graph = UnitGraph()
 	unit_graph.connect('inch','thou', 1000.0)
 	unit_graph.connect('foot','inch', 12.0)
@@ -72,6 +74,7 @@ def main():
 	unit_graph.connect('mile','furlong', 8.0)
 	unit_graph.connect('league','mile', 3.0)
 	unit_graph.connect('thou','league', 1 / 190080000.0)
+
 
 	for line in content:
 		words = line.split()
