@@ -1,5 +1,11 @@
 /*
 Created by Steven Weikai Lu on 2018/01/15
+
+Problem ID: 3dprinter
+
+CPU Time limit: 1 second
+Memory limit: 1024 MB
+Difficulty: 2.1
 */
 #include <iostream>
 #include <algorithm>
