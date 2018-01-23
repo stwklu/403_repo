@@ -10,8 +10,9 @@
  * -Task is to count how many people there are in the largest group of friends.
  *
  * Solution Summary:
- *
- *   Algorithmic idea, data structures ...
+ *  - Use a queue(vector) to store all the direct friends of a person.
+ *  - Recursively search down a person's friends.
+ *  - Once a friend is encountered this branch is pruned globally.
  *
  * Used Resources:
  * -StackOverflow
