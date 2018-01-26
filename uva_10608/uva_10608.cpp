@@ -29,15 +29,17 @@
 
 using namespace std;
 
+// Recursive search
 int search(int target, vector<vector<int>> &gangs, map<int, bool> &seen){
+	// reach the base case
 	if (seen[target]){return(0);}
 
 	seen[target] = true;
 
 	int total_gangs = gangs[target].size(), friends = 1;
 
+	// Search through all friends
 	for (int i=0; i < total_gangs; i++){
-		//cout << "total gangs: " << total_gangs << " current: " << i << endl;
 		friends += search(gangs[target][i], gangs, seen);
 	}
 
@@ -57,12 +59,12 @@ int main(){
 		N++;
 
 		for (int i=0; i < N; i++){
-			seen[i] = false;
+			seen[i] = false; // A global flag
 			gangs.push_back(vector<int>());
 		}
 
-		//cout << "initializing pass" << endl;
-
+		
+		// Build friend connection
 		while(M--){
 			int guy1, guy2;
 			cin >> guy1 >> guy2;
@@ -70,8 +72,7 @@ int main(){
 			gangs[guy2].push_back(guy1);
 		}
 
-		//cout << "add friends pass" << endl;
-
+		// Search and count friends
 		int tmp;
 		for (int i=0; i < N; i++){
 			tmp = search(i, gangs, seen);

@@ -39,13 +39,16 @@ int main(){
 	set<string> tokens;
 	while(getline(cin, line)){
 
+		// Some parsing
 		replace_if(line.begin(), line.end(), ::ispunct, ' ');
 		replace_if(line.begin(), line.end(), ::isdigit, ' ');
 		transform(line.begin(), line.end(), line.begin(), ::tolower);
 
+		// Feed to a string stream
 		string buffer;
 		stringstream ss(line);
 
+		// insert all words into a set, which will automatically sort and eliminate dupicate
 		while(ss >> buffer){
 			tokens.insert(buffer);
 		}

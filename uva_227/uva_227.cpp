@@ -1,4 +1,33 @@
-
+/*
+* Created by Steven Weikai Lu on 2018/01/15
+* 
+* UVa problem: <227>
+*
+* Topic: string
+*
+* Level: challenging
+* 
+* Brief problem description: 
+* 	A children’s puzzle that was popular 30 years ago consisted of a 5×5 frame which contained 24 small squares of equal size.
+* 	A unique letter of the alphabet was printed on each small square.
+* 	Since there were only 24 squares within the frame, the frame also contained an empty position which was the same size as a small square.
+* 	A square could be moved into that empty position if it were immediately to the right, to the left, above, or below the empty position.
+*	The object of the puzzle was to slide squares into the empty position so that the frame displayed the letters in alphabetical order.
+* 
+*
+* Solution Summary:
+* 	- represent the puzzle by a string vector
+*	- use map to make corresponding move
+*
+* Used Resources:
+* -StackOverflow
+*
+* I hereby certify that I have produced the following solution myself
+* using only the resources listed above in accordance with the CMPUT
+* 403 collaboration policy.
+*
+* --------------------- (Steven Weikai Lu)
+*/
 #include <iostream>
 #include <vector>
 #include <map>

@@ -1,8 +1,28 @@
 /*
-Created by Steven Weikai Lu on 2018/01/15
-
-https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=96&page=show_problem&problem=951
-Completion rate: 79.27%
+* Created by Steven Weikai Lu on 2018/01/15
+* 
+* UVa problem: <uva_10010>
+*
+* Topic: string
+*
+* Level: challenging
+* 
+* Brief problem description: 
+*	- Given a grid of character, find the words.
+* 	- words can be found on any direction, including diagonal
+* 
+*
+* Solution Summary:
+* 	- Search for each initial character, if match check next
+*
+* Used Resources:
+* -StackOverflow
+*
+* I hereby certify that I have produced the following solution myself
+* using only the resources listed above in accordance with the CMPUT
+* 403 collaboration policy.
+*
+* --------------------- (Steven Weikai Lu)
 */
 #include <iostream>
 #include <map>
@@ -15,7 +35,7 @@ bool directionSearch(vector<vector<char>> &grid, int x, int y, string str, int l
 
 bool search(vector<vector<char>> &grid, int i, int j, string str, map<string, int> &x_index, map<string, int> &y_index, map<string, bool> &founded);
 
-
+// Search for words on a given direction
 bool directionSearch(vector<vector<char>> &grid, int x, int y, string str, int length, vector<int> direction){
 	int grid_width = grid.size();
 	int grid_height = grid[0].size();
@@ -33,6 +53,7 @@ bool directionSearch(vector<vector<char>> &grid, int x, int y, string str, int l
 	return(true);
 }
 
+// For each grid, if first char match, send to direction search
 bool search(vector<vector<char>> &grid, int i, int j, string str, map<string, int> &x_index, map<string, int> &y_index, map<string, bool> &founded){
 	int length = str.length();
 	vector<int> direction;

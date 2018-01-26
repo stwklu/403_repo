@@ -1,12 +1,37 @@
 #! /usr/bin/python3
 '''
-4 thought
-
-problem site: https://open.kattis.com/problems/4thought
-
-CPU Time limit: 1 second
-Memory limit: 1024 MB
-Difficulty: 2.7
+/*
+* Created by Steven Weikai Lu on 2018/01/15
+* 
+* Kattis problem: <4thought>
+*
+* Topic: arithmetic
+*
+* Level: simple
+* 
+* Brief problem description: 
+* Write a program which, given an integer nn as input, will produce a mathematical expression whose solution is nn.
+* The solution is restricted to using exactly four 44’s and exactly three of the binary operations selected from the set {∗,+,−,/}{∗,+,−,/}.
+* The number 44 is the ONLY number you can use. 
+* You are not allowed to concatenate fours to generate other numbers, such as 4444 or 444444.
+* For example given n=0, a solution is 4∗4−4∗4=04∗4−4∗4=0. Given n=7n=7, a solution is 4+4−4 / 4=74+4−4 / 4=7. Division is considered truncating integer division, so that 1/41/4 is 00 (instead of 0.250.25). Assume the usual precedence of operations so that 4+4∗4=204+4∗4=20, not 3232. Not all integer inputs have solutions using four 44’s with the aforementioned restrictions (consider n=11n=11).
+* 
+*
+* Solution Summary:
+* - Treat multiplcation and division as strong unit compute first
+* - Treat addition and subtraction as weak unit, compute after strong unit
+* - Then just exhaustic search...
+* 
+*
+* Used Resources:
+* -StackOverflow
+*
+* I hereby certify that I have produced the following solution myself
+* using only the resources listed above in accordance with the CMPUT
+* 403 collaboration policy.
+*
+* --------------------- (Steven Weikai Lu)
+*/
 '''
 
 import sys, operator
