@@ -63,7 +63,6 @@ BI_tree::BI_tree(int n){
 BI_tree::BI_tree(int *arr, int n){
 	size = n;
 	tree = new int[size+1];
-
 	fill_n(tree, size+1, 0);
 
 	// Update each value
@@ -123,6 +122,8 @@ int main(){
 	int n, k, a, b;
 	char q;
 	while(cin >> n >> k){
+		// Read input
+		// Keep record of zero and negative values in array
 		BI_tree zero = BI_tree(n);
 		BI_tree neg = BI_tree(n);
 		for(int i=1;i<=n;i++){
@@ -138,14 +139,18 @@ int main(){
 		while(k--){
 			cin >> q >> a >> b;
 			if(q == 'C'){
+				// Changeing negative values
 				if((arr[a] >= 0 && b < 0)||(arr[a] < 0 && b >= 0)){neg.update(a, 1);}
+				// Changing zero values
 				if(arr[a] != 0 && b == 0){zero.update(a,1);}
 				else if (arr[a]==0 && b != 0){zero.update(a,-1);}
 				arr[a] = b;
 			}
 
 			else if (q=='P'){
+				// Zero if there is any zero in range
 				if(zero.getSum(a,b)){cout << "0";}
+				// Negative if there are odd number of negative number in range
 				else if(neg.getSum(a, b) % 2 == 0){cout << "+";}
 				else{cout << "-";}
 			}
